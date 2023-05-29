@@ -13,10 +13,10 @@ public class Plantacao {
 	private long qtdeAguaAno;
 	
 	
-	private Area local;
+	private Terreno local;
 
 
-	public Plantacao(String nome, long area, String platacao, long qtdeAguaAno, Area local) {
+	public Plantacao(String nome, long area, String platacao, long qtdeAguaAno, Terreno local) {
 		super();
 		setNome(nome);
 		setArea(area);
@@ -72,12 +72,12 @@ public class Plantacao {
 	}
 
 
-	public Area getLocal() {
+	public Terreno getLocal() {
 		return local;
 	}
 
 
-	public void setLocal(Area local) {
+	public void setLocal(Terreno local) {
 		this.local = local;
 	}
 	

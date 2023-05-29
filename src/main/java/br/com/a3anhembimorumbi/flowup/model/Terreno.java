@@ -3,7 +3,7 @@ package br.com.a3anhembimorumbi.flowup.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Area {
+public class Terreno {
 	
 	private int id;
 	
@@ -15,7 +15,7 @@ public class Area {
 	
 	private List<Plantacao> plantacoes;
 
-	public Area(String nome, String regiao, long area) {
+	public Terreno(String nome, String regiao, long area) {
 		super();
 		setNome(nome);
 		setRegiao(regiao);

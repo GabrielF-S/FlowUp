@@ -11,10 +11,10 @@ public class UsuarioGestorTeste {
 		UsuarioGestor usuario = new UsuarioGestor("Tomas","Shelbi", "thosh", "tho12345");
 		
 		//acao
-		Area area = usuario.CadastrarAreaTotal("Area1","Nordeste",200L);
+		Terreno terreno = usuario.CadastrarAreaTotal("Area1","Nordeste",200L);
 		
 		//resultado
-		Assertions.assertThat(area).isInstanceOf(Area.class);
+		Assertions.assertThat(terreno).isInstanceOf(Terreno.class);
 		
 	}
 	@Test
@@ -22,9 +22,9 @@ public class UsuarioGestorTeste {
 		//cenario
 		UsuarioGestor usuario = new UsuarioGestor("Tomas","Shelbi", "thosh", "tho12345");
 		
-		Area area = usuario.CadastrarAreaTotal("Area1","Nordeste",200L);
+		Terreno terreno = usuario.CadastrarAreaTotal("Area1","Nordeste",200L);
 		//acao
-		Plantacao plantacao = usuario.CadastrarPlantacao("PLantacao1", 100L, "Pepino", 42, area);
+		Plantacao plantacao = usuario.CadastrarPlantacao("PLantacao1", 100L, "Pepino", 42, terreno);
 		
 		//resultado
 		Assertions.assertThat(plantacao).isInstanceOf(Plantacao.class);
