@@ -36,6 +36,42 @@ public class AreaTeste {
 		Assertions.assertThat(areaTotal).isEqualTo(100L);
 		
 	}
+	@Test
+	public void when_return_TotalAreaDisponivelComMaisPlantacoes() {
+		
+		//cenario
+		Area area = new Area("Area1","Nordeste",200L);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, area);
+		Plantacao plan2 = new Plantacao("PLantacao2", 50L, "Algodao", 15, area);
+		
+		//acao
+		area.adicionarPlantacao(plan);
+		area.adicionarPlantacao(plan2);
+		long areaTotal = area.getAreaTotalDisponivel();
+		
+		//resultado
+		
+		Assertions.assertThat(areaTotal).isEqualTo(50L);
+		
+	}
+	@Test
+	public void when_return_SemAreaDisponivel() {
+		
+		//cenario
+		Area area = new Area("Area1","Nordeste",200L);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, area);
+		Plantacao plan2 = new Plantacao("PLantacao2", 150L, "Algodao", 15, area);
+		
+		//acao
+		area.adicionarPlantacao(plan);
+		area.adicionarPlantacao(plan2);
+		long areaTotal = area.getAreaTotalDisponivel();
+		
+		//resultado
+		
+		Assertions.assertThat(areaTotal).isEqualTo(100L);
+		
+	}
 
 	
 }
