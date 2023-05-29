@@ -14,4 +14,11 @@ public class UsuarioAdmin  extends Usuario{
 		return usuarioComun;
 	}
 
+
+	public UsuarioGestor CadastrarusuarioGestor(String nome, String sobrenome, String login, String senha) {
+		UsuarioGestor usuarioGestor = new UsuarioGestor(nome, sobrenome, login, senha);
+		
+		return  usuarioGestor;
+	}
+
 }
