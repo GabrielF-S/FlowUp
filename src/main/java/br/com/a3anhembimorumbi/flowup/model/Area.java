@@ -53,7 +53,13 @@ public class Area {
 	}
 	
 	public void adicionarPlantacao(Plantacao plantacao) {
-		plantacoes.add(plantacao);
+		
+		
+			if(getAreaTotalDisponivel()- plantacao.getArea()>0) {
+				plantacoes.add(plantacao);
+			}
+		
+		
 	}
 	
 	
@@ -71,7 +77,7 @@ public class Area {
 
 	public long getAreaTotalDisponivel() {
 	
-		long areaTotalDisponivel = getArea() - areaPlantacoes();
+		long areaTotalDisponivel = area - areaPlantacoes();
 		
 		return areaTotalDisponivel;
 	}
