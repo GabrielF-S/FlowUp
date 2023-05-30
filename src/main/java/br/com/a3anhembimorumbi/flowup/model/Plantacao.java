@@ -23,6 +23,7 @@ public class Plantacao {
 		setPlatacao(platacao);
 		setQtdeAguaAno(qtdeAguaAno);
 		setLocal(local);
+		local.adicionarPlantacao(this);
 	}
 
 
