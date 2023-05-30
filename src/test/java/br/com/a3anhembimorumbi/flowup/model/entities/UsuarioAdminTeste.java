@@ -1,7 +1,11 @@
-package br.com.a3anhembimorumbi.flowup.model;
+package br.com.a3anhembimorumbi.flowup.model.entities;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import br.com.a3anhembimorumbi.flowup.model.entities.UsuarioAdmin;
+import br.com.a3anhembimorumbi.flowup.model.entities.UsuarioComum;
+import br.com.a3anhembimorumbi.flowup.model.entities.UsuarioGestor;
 
 public class UsuarioAdminTeste {
 	

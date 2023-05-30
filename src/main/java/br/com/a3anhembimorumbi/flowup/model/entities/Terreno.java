@@ -1,10 +1,17 @@
-package br.com.a3anhembimorumbi.flowup.model;
+package br.com.a3anhembimorumbi.flowup.model.entities;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+@Entity
 public class Terreno {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String nome;
@@ -12,7 +19,7 @@ public class Terreno {
 	private String regiao;
 	
 	private long area;
-	
+	@OneToMany(mappedBy = "local")
 	private List<Plantacao> plantacoes;
 
 	public Terreno(String nome, String regiao, long area) {

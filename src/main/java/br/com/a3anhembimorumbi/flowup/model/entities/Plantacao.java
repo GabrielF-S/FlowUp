@@ -1,7 +1,18 @@
-package br.com.a3anhembimorumbi.flowup.model;
+package br.com.a3anhembimorumbi.flowup.model.entities;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+
+@Entity
 public class Plantacao {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String nome;
@@ -12,8 +23,12 @@ public class Plantacao {
 	
 	private long qtdeAguaAno;
 	
-	
+	@ManyToOne
 	private Terreno local;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name ="rotina_id", unique = true)
+	private Rotina rotina;
 
 
 	public Plantacao(String nome, long area, String platacao, long qtdeAguaAno, Terreno local) {

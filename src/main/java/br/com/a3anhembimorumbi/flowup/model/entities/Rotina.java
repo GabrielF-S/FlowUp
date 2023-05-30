@@ -1,24 +1,35 @@
-package br.com.a3anhembimorumbi.flowup.model;
+package br.com.a3anhembimorumbi.flowup.model.entities;
 
+import br.com.a3anhembimorumbi.flowup.model.Frequencia;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+
+@Entity
 public class Rotina {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String nome;
-	
+	@OneToOne(mappedBy = "rotina")
 	private Plantacao plantacao;
-	
+
 	private Frequencia freuencia;
-	
-	private boolean aprovado = false;
-	
-	private boolean ativado = false;
+
+	private boolean aprovado;
+
+	private boolean ativado;
 
 	public Rotina(String nome, Plantacao plantacao, Frequencia freuencia) {
 		super();
-		this.nome = nome;
-		this.plantacao = plantacao;
-		this.freuencia = freuencia;
+		setNome(nome);
+		setPlantacao(plantacao);
+		setFreuencia(freuencia);
+		setAprovado(false);
+		setAtivado(false);
 	}
 
 	public String getNome() {
@@ -60,9 +71,5 @@ public class Rotina {
 	public void setAtivado(boolean ativado) {
 		this.ativado = ativado;
 	}
-	
-	
-	
-	
 
 }

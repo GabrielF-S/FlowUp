@@ -1,5 +1,11 @@
-package br.com.a3anhembimorumbi.flowup.model;
+package br.com.a3anhembimorumbi.flowup.model.entities;
 
+import br.com.a3anhembimorumbi.flowup.model.Frequencia;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("UC")
 public class UsuarioComum  extends Usuario{
 
 	public UsuarioComum(String nome, String sobrenome, String login, String senha) {

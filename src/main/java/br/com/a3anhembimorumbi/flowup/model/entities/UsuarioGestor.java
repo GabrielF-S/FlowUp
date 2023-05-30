@@ -1,5 +1,10 @@
-package br.com.a3anhembimorumbi.flowup.model;
+package br.com.a3anhembimorumbi.flowup.model.entities;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("UG")
 public class UsuarioGestor extends Usuario{
 
 	public UsuarioGestor(String nome, String sobrenome, String login, String senha) {
