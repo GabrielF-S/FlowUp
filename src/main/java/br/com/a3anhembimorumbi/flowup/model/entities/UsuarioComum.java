@@ -18,6 +18,14 @@ public class UsuarioComum  extends Usuario{
 		// TODO Auto-generated method stub
 		return rotina;
 	}
+
+	public void ativaRotina(Rotina rotina) {
+		if(rotina.isAprovado()) {
+			rotina.setAtivado(true);
+		}
+		
+		
+	}
 	
 	
 
