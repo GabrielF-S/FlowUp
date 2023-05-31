@@ -36,7 +36,7 @@ public class UsuarioGestorTeste {
 	}
 
 	@Test
-	public void when_approval_rotina() {
+	public void deveAprovarRotina() {
 		// cenario
 		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = usuario.CadastrarAreaTotal("Area1", "Nordeste", 200L);
@@ -51,7 +51,23 @@ public class UsuarioGestorTeste {
 	   
 	}
 	@Test
-	public void when_desativar_rotina() {
+	public void naoDeveAprovarRotina() {
+		// cenario
+		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
+		Terreno terreno = usuario.CadastrarAreaTotal("Area1", "Nordeste", 200L);
+		Plantacao plantacao = usuario.CadastrarPlantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Rotina rot = new Rotina("Rotina1", plantacao, Frequencia.DIARIO);
+		rot.setAprovado(true);
+		// acao
+		
+		usuario.aprovarRotinas(rot);
+		
+		// retorno
+		Assertions.assertThat(rot.isAprovado()).isTrue();
+		
+	}
+	@Test
+	public void deveDesativarRotina() {
 		// cenario
 		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = usuario.CadastrarAreaTotal("Area1", "Nordeste", 200L);
@@ -64,6 +80,21 @@ public class UsuarioGestorTeste {
 		
 		// retorno
 		Assertions.assertThat(rot.isAtivado()).isTrue();
+		
+	}
+	@Test
+	public void naoDeveDesativarRotina() {
+		// cenario
+		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
+		Terreno terreno = usuario.CadastrarAreaTotal("Area1", "Nordeste", 200L);
+		Plantacao plantacao = usuario.CadastrarPlantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Rotina rot = new Rotina("Rotina1", plantacao, Frequencia.DIARIO);
+		// acao
+		
+		usuario.desativarRotinas(rot);
+		
+		// retorno
+		Assertions.assertThat(rot.isAtivado()).isFalse();
 		
 	}
 
