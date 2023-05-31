@@ -4,10 +4,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import br.com.a3anhembimorumbi.flowup.model.Frequencia;
-import br.com.a3anhembimorumbi.flowup.model.entities.Plantacao;
-import br.com.a3anhembimorumbi.flowup.model.entities.Rotina;
-import br.com.a3anhembimorumbi.flowup.model.entities.Terreno;
-import br.com.a3anhembimorumbi.flowup.model.entities.UsuarioComum;
 
 public class UsuarioComumTeste {
 	@Test
