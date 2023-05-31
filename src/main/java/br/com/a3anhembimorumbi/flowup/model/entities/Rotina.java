@@ -32,6 +32,8 @@ public class Rotina {
 		setAtivado(false);
 	}
 
+	
+
 	public String getNome() {
 		return nome;
 	}
@@ -70,6 +72,10 @@ public class Rotina {
 
 	public void setAtivado(boolean ativado) {
 		this.ativado = ativado;
+	}
+
+	public int getId() {
+		return id;
 	}
 
 }
