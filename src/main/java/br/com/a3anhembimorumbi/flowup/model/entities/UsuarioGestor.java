@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 @Entity
 @DiscriminatorValue("UG")
 public class UsuarioGestor extends Usuario{
+	
 
 	public UsuarioGestor(String nome, String sobrenome, String login, String senha) {
 		super(nome, sobrenome, login, senha);
@@ -21,6 +22,22 @@ public class UsuarioGestor extends Usuario{
 		Plantacao plan = new Plantacao(nome, area, plantacao, qtdeAguaAno, local);
 		
 		return plan;
+	}
+
+	public void aprovarRotinas(Rotina rot) {
+		if(!rot.isAprovado()) {
+			rot.setAprovado(true);
+		}
+		
+		
+		
+	}
+
+	public void desativarRotinas(Rotina rot) {
+		if(rot.isAtivado()) {
+			rot.setAprovado(false);
+		}
+		
 	}
 
 }
