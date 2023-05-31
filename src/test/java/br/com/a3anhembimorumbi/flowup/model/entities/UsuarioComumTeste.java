@@ -12,17 +12,52 @@ import br.com.a3anhembimorumbi.flowup.model.entities.UsuarioComum;
 public class UsuarioComumTeste {
 	@Test
 	public void cadastrarRotina() {
-		//cenario
-		UsuarioComum usuario = new UsuarioComum("Tomas","Shelbi", "thosh", "tho12345");
-		Terreno terreno = new Terreno("Area1","Nordeste",200L);
+		// cenario
+		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
+		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
 		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
-		
-		//ação		
+
+		// ação
+		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
+
+		// resultado
+		Assertions.assertThat(rotina).isInstanceOf(Rotina.class);
+
+	}
+
+	@Test
+	public void deveAtivarRotinadeIrrigacao() {
+		// cenario
+		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
+		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
+		rotina.setAprovado(true);
+
+		// ação
+
+		usuario.ativaRotina(rotina);
+
+		// resultado
+
+		Assertions.assertThat(rotina.isAtivado()).isTrue();
+
+	}
+	@Test
+	public void naoDeveAtivarRotinadeIrrigacao() {
+		// cenario
+		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
+		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
 		
+		// ação
 		
-		//resultado
-		Assertions.assertThat(rotina).isInstanceOf(Rotina.class);
+		usuario.ativaRotina(rotina);
+		
+		// resultado
+		
+		Assertions.assertThat(rotina.isAtivado()).isFalse();
 		
 	}
 
