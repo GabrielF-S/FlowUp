@@ -26,6 +26,29 @@ public class UsuarioComum  extends Usuario{
 		
 		
 	}
+
+	public void editarNomeRotina(Rotina rotina) {
+		if(!rotina.isAprovado()) {
+			String novoNome= "NovoNome";
+			rotina.setNome(novoNome);
+		}
+		
+	}
+
+	public void editarPlantacaoRotina(Rotina rotina) {
+		if(!rotina.isAprovado()) {
+			Terreno mesmoTerreno =rotina.getPlantacao().getLocal();
+			rotina.setPlantacao(new Plantacao("PLantacao2", 100, "Abobora", 76, mesmoTerreno));
+		}
+		
+	}
+
+	public void editarFrequenciaRotina(Rotina rotina) {
+		if(!rotina.isAprovado()) {
+			rotina.setFreuencia(Frequencia.DIANDIAS);
+		}
+		
+	}
 	
 	
 
