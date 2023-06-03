@@ -44,15 +44,20 @@ public class UsuarioGestor extends Usuario{
 //	public void relatorioDeConsumo() {
 //		
 //		List<Terreno> terrenos = terrenoDAO.obterTodos();
-//		int consumoTotal =0;
+//		int consumoTotalAgua =0;
+//		int consumoTotalPesticida = 0;
 //		for(Terreno terreno :terrenos ) {
 //			List<Plantacao> plantacoes = terreno.getPlantacoes();
 //			for(Plantacao plan : plantacoes) {
-//				consumoTotal += plan.getQtdeAguaAno();
+//				consumoTotalAgua += plan.getQtdeAguaAno();
+//				for(Pesticida pest : plan.getRotina().getPesticida()) {
+//					consumoTotalPesticida+= pest.getQuantidadeUso();
+//				}
 //			}
 //			System.out.println("Area Disponivel :" + terreno.getAreaTotalDisponivel()+"/"+terreno.getArea()+"/n" );
 //			
-//			System.out.println("O Consumo de agua é: "+ consumoTotal);
+//			System.out.println("O Consumo de agua é: "+ consumoTotalAgua);
+//			System.out.println("O Consumo de pesticida é: "+ consumoTotalPesticida);
 //		}
 //		
 //	}
