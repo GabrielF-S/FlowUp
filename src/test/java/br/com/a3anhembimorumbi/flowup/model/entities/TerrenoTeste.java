@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class TerrenoTeste {
 	@Test
-	public void when_return_totalArea() {
+	public void deveRetornarAreaTotal() {
 		// cenario
 		Terreno terreno = new Terreno("Area1","Nordeste",200L);
 
@@ -20,11 +20,11 @@ public class TerrenoTeste {
 	}
 	
 	@Test
-	public void when_return_TotalAreaDisponivel() {
+	public void deveRetornarAreaTotalDisponivel() {
 		
 		//cenario
 		Terreno terreno = new Terreno("Area1","Nordeste",200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		
 		
 		//acao
@@ -37,12 +37,12 @@ public class TerrenoTeste {
 		
 	}
 	@Test
-	public void when_return_TotalAreaDisponivelComMaisPlantacoes() {
+	public void deveRetornarAreaTotalDisponivelComMaisPlantacoes() {
 		
 		//cenario
 		Terreno terreno = new Terreno("Area1","Nordeste",200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
-		Plantacao plan2 = new Plantacao("PLantacao2", 50L, "Algodao", 15, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
+		Plantacao plan2 = new Plantacao("PLantacao2", 50L, "Algodao", 15, terreno, 0);
 		
 		//acao
 		terreno.adicionarPlantacao(plan);
@@ -55,12 +55,12 @@ public class TerrenoTeste {
 		
 	}
 	@Test
-	public void when_return_SemAreaDisponivel() {
+	public void deveRetornarSemAreaDisponivel() {
 		
 		//cenario
 		Terreno terreno = new Terreno("Area1","Nordeste",200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
-		Plantacao plan2 = new Plantacao("PLantacao2", 150L, "Algodao", 15, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
+		Plantacao plan2 = new Plantacao("PLantacao2", 150L, "Algodao", 15, terreno, 0);
 		
 		//acao
 		terreno.adicionarPlantacao(plan);

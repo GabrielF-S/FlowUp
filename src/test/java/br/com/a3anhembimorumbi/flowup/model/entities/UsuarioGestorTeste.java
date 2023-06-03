@@ -6,7 +6,12 @@ import org.junit.jupiter.api.Test;
 import br.com.a3anhembimorumbi.flowup.model.Frequencia;
 
 public class UsuarioGestorTeste {
-	
+//	@Mock
+//	private DAO<Terreno> terrenoDAO = new DAO<>(Terreno.class);
+//	@Before
+//	public void setup() {
+//		MockitoAnnotations.initMocks(this);
+//	}
 
 	@Test
 	public void when_createArea_then_returnArea() {
@@ -66,6 +71,7 @@ public class UsuarioGestorTeste {
 		Assertions.assertThat(rot.isAprovado()).isTrue();
 		
 	}
+	
 	@Test
 	public void deveDesativarRotina() {
 		// cenario
@@ -97,5 +103,20 @@ public class UsuarioGestorTeste {
 		Assertions.assertThat(rot.isAtivado()).isFalse();
 		
 	}
+	
+//	@Test
+//	public void devePuxarRelatoriodeConsumo() {
+//		
+//		UsuarioGestor usuario = new UsuarioGestor("Steven", "Unverse", "steun", "12345");
+//		
+//		
+//		usuario.relatorioDeConsumo();
+//		
+//		
+//		verify(usuario).relatorioDeConsumo();
+//		
+//		
+//		
+//	}
 
 }

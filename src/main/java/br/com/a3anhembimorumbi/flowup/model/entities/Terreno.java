@@ -88,6 +88,14 @@ public class Terreno {
 		
 		return areaTotalDisponivel;
 	}
+
+	public List<Plantacao> getPlantacoes() {
+		return plantacoes;
+	}
+
+	public void setPlantacoes(List<Plantacao> plantacoes) {
+		this.plantacoes = plantacoes;
+	}
 	
 	
 	

@@ -6,48 +6,48 @@ import org.junit.jupiter.api.Test;
 public class UsuarioAdminTeste {
 	
 	@Test
-	public void when_createComunUSer_returnCOmunUser() {
+	public void deveCriarUsuarioComumERetornalo() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");
 		
 		//ação
-		UsuarioComum usuaurioComun = admin.CadastrarusuarioComun("Arthur","Perereira", "artpe", "art123456");
+		UsuarioComum usuaurioComum = admin.cadastrarUsuarioComum("Arthur","Perereira", "artpe", "art123456");
 		
 		//resultado
-		Assertions.assertThat(usuaurioComun).isInstanceOf(UsuarioComum.class);
+		Assertions.assertThat(usuaurioComum).isInstanceOf(UsuarioComum.class);
 		
 	}
 	
 	@Test
-	public void when_createComunUSer_notReturnUserAdminType() {
+	public void deveVerificarSeNaoCriouUsuarioAdmin() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");
 		
 		//ação
-		UsuarioComum usuaurioComun = admin.CadastrarusuarioComun("Arthur","Perereira", "artpe", "art123456");
+		UsuarioComum usuaurioComum = admin.cadastrarUsuarioComum("Arthur","Perereira", "artpe", "art123456");
 		
 		//resultado
-		Assertions.assertThat(usuaurioComun).isNotInstanceOf(UsuarioAdmin.class);
+		Assertions.assertThat(usuaurioComum).isNotInstanceOf(UsuarioAdmin.class);
 		
 	}
 	@Test
-	public void when_createComunUSer_notReturnUserGestorType() {
+	public void deveVerificarSeCriouUsuarioComumNaoGestor() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");
 		
 		//ação
-		UsuarioComum usuaurioComun = admin.CadastrarusuarioComun("Arthur","Perereira", "artpe", "art123456");
+		UsuarioComum usuaurioComum = admin.cadastrarUsuarioComum("Arthur","Perereira", "artpe", "art123456");
 		
 		//resultado
-		Assertions.assertThat(usuaurioComun).isNotInstanceOf(UsuarioGestor.class);
+		Assertions.assertThat(usuaurioComum).isNotInstanceOf(UsuarioGestor.class);
 		
 	}
 	
 	@Test
-	public void when_createGestorUSer_returnGestorUser() {
+	public void deveCriarUsuarioGestorERetornalo() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");
@@ -61,7 +61,7 @@ public class UsuarioAdminTeste {
 	}
 	
 	@Test
-	public void when_createGestorUSer_notReturnUserComunType() {
+	public void deveVerificarSeCriouUsuarioGestorNaoComum() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");
@@ -75,7 +75,7 @@ public class UsuarioAdminTeste {
 	}
 	
 	@Test
-	public void when_createGestorUSer_notReturnUserAdminType() {
+	public void deveVerificarSeCriouUsuarioGestorNaoAdmin() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");

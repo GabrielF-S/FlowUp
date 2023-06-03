@@ -7,21 +7,31 @@ import jakarta.persistence.Entity;
 @Entity
 @DiscriminatorValue("UC")
 public class UsuarioComum  extends Usuario{
+//	@Transient
+//	private EmailService email;
+//	@Transient
+//	private DAO<Rotina> rotinaDAO = new DAO<>(Rotina.class);
+//	@Transient
+//	private DAO<UsuarioComum> usuarioComumDAO = new DAO<>(UsuarioComum.class);
 
 	public UsuarioComum(String nome, String sobrenome, String login, String senha) {
 		super(nome, sobrenome, login, senha);
-		// TODO Auto-generated constructor stub
+//		usuarioComumDAO.abrirTransacao().incluir(this).fecharTransacao();
+		
 	}
 
 	public Rotina CadastrarRotina(String nome, Plantacao plantacao, Frequencia frequencia) {
 		Rotina rotina = new Rotina(nome, plantacao, frequencia);
-		// TODO Auto-generated method stub
+//		rotinaDAO.abrirTransacao().incluir(rotina).fecharTransacao();
+		
 		return rotina;
 	}
 
 	public void ativaRotina(Rotina rotina) {
-		if(rotina.isAprovado()) {
+//		rotina = rotinaDAO.abrirTransacao().obeterPorID(rotina);
+		if(rotina.isAprovado()) {			
 			rotina.setAtivado(true);
+//			rotinaDAO.incluir(rotina).fecharTransacao();
 		}
 		
 		
@@ -38,7 +48,7 @@ public class UsuarioComum  extends Usuario{
 	public void editarPlantacaoRotina(Rotina rotina) {
 		if(!rotina.isAprovado()) {
 			Terreno mesmoTerreno =rotina.getPlantacao().getLocal();
-			rotina.setPlantacao(new Plantacao("PLantacao2", 100, "Abobora", 76, mesmoTerreno));
+			rotina.setPlantacao(new Plantacao("PLantacao2", 100, "Abobora", 76, mesmoTerreno, 0));
 		}
 		
 	}
@@ -49,6 +59,11 @@ public class UsuarioComum  extends Usuario{
 		}
 		
 	}
+
+//	public void notificarRotina(UsuarioGestor gestor, Rotina rot) {
+//		email.notificarRotinaCadastrada(gestor, rot.getId());
+//		
+//	}
 	
 	
 

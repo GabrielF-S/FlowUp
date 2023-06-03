@@ -5,13 +5,25 @@ import org.junit.jupiter.api.Test;
 
 import br.com.a3anhembimorumbi.flowup.model.Frequencia;
 
+
 public class UsuarioComumTeste {
+//
+//	@Mock
+//	private EmailService mail;
+//	
+//	
+//	@Before
+//	public void setup() {
+//		MockitoAnnotations.initMocks(this);
+//	}
+	
+	
 	@Test
 	public void cadastrarRotina() {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 
 		// ação
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
@@ -26,7 +38,7 @@ public class UsuarioComumTeste {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
 		rotina.setAprovado(true);
 
@@ -45,7 +57,7 @@ public class UsuarioComumTeste {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
 
 		// ação
@@ -63,7 +75,7 @@ public class UsuarioComumTeste {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
 
 		// ação
@@ -79,7 +91,7 @@ public class UsuarioComumTeste {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
 		rotina.setAprovado(true);
 		// ação
@@ -95,7 +107,7 @@ public class UsuarioComumTeste {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
 		
 		// ação
@@ -111,7 +123,7 @@ public class UsuarioComumTeste {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
 		rotina.setAprovado(true);
 		// ação
@@ -128,7 +140,7 @@ public class UsuarioComumTeste {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
 		
 		// ação
@@ -144,7 +156,7 @@ public class UsuarioComumTeste {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = usuario.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
 		rotina.setAprovado(true);
 		// ação
@@ -155,5 +167,29 @@ public class UsuarioComumTeste {
 		Assertions.assertThat(rotina.getFreuencia()).isEqualTo(Frequencia.DIARIO);
 		
 	}
+	
+//	@Disabled
+//	@Test
+//	public void deveEnviarEmailNotificandoCriacaoDeRotinas() {
+//		//cenario
+////		MockitoAnnotations.initMocks(this);
+//		UsuarioComum user = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
+//		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
+//		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
+//		Rotina rotina = user.CadastrarRotina("Rotina1", plan, Frequencia.DIARIO);
+//		
+//		UsuarioGestor gestor = new UsuarioGestor("Thiago", "Shelbi", "thish", "thi12345");
+//		
+//		
+//		Mockito.mock(EmailService.class);
+//		
+//		user.notificarRotina(gestor, rotina);
+//		
+//		
+//		
+//		verify(mail).notificarRotinaCadastrada(gestor, rotina.getId());;
+//		
+//		
+//	}
 
 }
