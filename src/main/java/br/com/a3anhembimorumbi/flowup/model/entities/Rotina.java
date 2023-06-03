@@ -1,10 +1,14 @@
 package br.com.a3anhembimorumbi.flowup.model.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.a3anhembimorumbi.flowup.model.Frequencia;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -22,6 +26,9 @@ public class Rotina {
 	private boolean aprovado;
 
 	private boolean ativado;
+	@ManyToMany(mappedBy = "rotina")
+	private List<Pesticida> pesticida;
+	
 
 	public Rotina(String nome, Plantacao plantacao, Frequencia freuencia) {
 		super();
@@ -78,4 +85,42 @@ public class Rotina {
 		return id;
 	}
 
+
+
+	public List<Pesticida> getPesticida() {
+		if(pesticida == null) {
+			pesticida = new ArrayList<>();
+		}
+		return pesticida;
+	}
+
+
+
+	public void setPesticida(List<Pesticida> pesticida) {
+		
+		this.pesticida = pesticida;
+		
+	}
+
+
+
+	public void cadastrarPesticida(Pesticida p) {
+
+			if (p != null && !getPesticida().contains(p)) {
+				getPesticida().add(p);
+				
+
+			}
+		
+		
+	}
+
+
+
+	
+
+
+
+
+	
 }

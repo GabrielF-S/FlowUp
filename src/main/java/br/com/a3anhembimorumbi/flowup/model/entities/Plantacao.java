@@ -39,7 +39,7 @@ public class Plantacao {
 	private EmailService email;
 
 
-	@OneToOne(cascade = CascadeType.PERSIST)
+	@OneToOne
 	@JoinColumn(name ="rotina_id", unique = true)
 	private Rotina rotina;
 
