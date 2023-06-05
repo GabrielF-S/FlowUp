@@ -14,7 +14,7 @@ public class UsuarioGestorTeste {
 //	}
 
 	@Test
-	public void when_createArea_then_returnArea() {
+	public void deveCriarTerreno() {
 		// cenario
 		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
 
@@ -27,7 +27,7 @@ public class UsuarioGestorTeste {
 	}
 
 	@Test
-	public void when_createPlantcao_then_returnPlantcao() {
+	public void deveCriarPlantacao() {
 		// cenario
 		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
 
@@ -86,7 +86,7 @@ public class UsuarioGestorTeste {
 		usuario.desativarRotinas(rot);
 		
 		// retorno
-		Assertions.assertThat(rot.isAtivado()).isTrue();
+		Assertions.assertThat(rot.isAtivado()).isFalse();
 		
 	}
 	@Test
@@ -104,6 +104,7 @@ public class UsuarioGestorTeste {
 		Assertions.assertThat(rot.isAtivado()).isFalse();
 		
 	}
+	
 	
 //	@Test
 //	public void devePuxarRelatoriodeConsumo() {

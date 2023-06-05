@@ -36,7 +36,7 @@ public class UsuarioGestor extends Usuario{
 
 	public void desativarRotinas(Rotina rot) {
 		if(rot.isAtivado()) {
-			rot.setAprovado(false);
+			rot.setAtivado(false);
 		}
 		
 	}
