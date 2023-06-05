@@ -38,10 +38,25 @@ public class Plantacao {
 	@Transient
 	private EmailService email;
 
-
+	private LocalDate ultimaIrrigcao;
+	
 	@OneToOne
 	@JoinColumn(name ="rotina_id", unique = true)
 	private Rotina rotina;
+
+
+	public LocalDate getUltimaIrrigcao() {
+		return ultimaIrrigcao;
+	}
+
+
+
+
+	public void setUltimaIrrigcao(LocalDate ultimaIrrigcao) {
+		this.ultimaIrrigcao = ultimaIrrigcao;
+	}
+
+
 
 
 	public Plantacao(String nome, long area, String platacao, long qtdeAguaAno, Terreno local, long ciclo) {
@@ -182,6 +197,16 @@ public class Plantacao {
 			return true;
 		}		
 		return false;
+	}
+
+
+
+
+	public void verificarIrrigacao() {
+		if(getUltimaIrrigcao()!= LocalDate.now()) {
+			rotina.verificarIrrigacao();
+		}
+		
 	}
 
 
