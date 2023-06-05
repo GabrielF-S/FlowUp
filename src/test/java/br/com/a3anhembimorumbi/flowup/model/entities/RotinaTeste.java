@@ -31,5 +31,33 @@ public class RotinaTeste {
 		
 		Assertions.assertThat(rotina.getPesticida()).isEmpty();
 	}
+	
+	@Test
+	public void deveVerificarIrrigacao() {
+		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
+		Rotina rotina = new Rotina("Rotina1",plan , Frequencia.DIARIO);
+		
+		rotina.setAprovado(true);
+		rotina.setAtivado(true);
+		boolean isIrrigator = rotina.verificarIrrigacao();
+		
+		
+		Assertions.assertThat(isIrrigator).isTrue();
+		
+	}
+	@Test
+	public void naoDeveVerificarIrrigacao() {
+		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
+		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
+		Rotina rotina = new Rotina("Rotina1",plan , Frequencia.DIARIO);
+		
+		
+		boolean isIrrigator = rotina.verificarIrrigacao();
+		
+		
+		Assertions.assertThat(isIrrigator).isFalse();
+		
+	}
 
 }
