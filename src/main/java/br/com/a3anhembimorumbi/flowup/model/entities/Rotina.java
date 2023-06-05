@@ -81,7 +81,9 @@ public class Rotina {
 	}
 
 	public void setAtivado(boolean ativado) {
-		this.ativado = ativado;
+		if(isAprovado()) {
+			this.ativado = ativado;
+		}
 	}
 
 	public int getId() {
@@ -135,7 +137,7 @@ public class Rotina {
 	public boolean verificarIrrigacao() {
 		
 		try {
-			if (isAprovado() && isAtivado()) {
+			if (plantacao.getUltimaIrrigcao()!= LocalDate.now() && isAprovado() && isAtivado()) {
 				Thread.sleep(5000);
 				setIrrigado(true);	
 				plantacao.setUltimaIrrigcao(LocalDate.now());
