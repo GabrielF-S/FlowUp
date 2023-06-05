@@ -1,5 +1,6 @@
 package br.com.a3anhembimorumbi.flowup.model.entities;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Rotina {
@@ -28,8 +30,9 @@ public class Rotina {
 	private boolean ativado;
 	@ManyToMany(mappedBy = "rotina")
 	private List<Pesticida> pesticida;
+	@Transient
+	private boolean irrigado =false;
 	
-
 	public Rotina(String nome, Plantacao plantacao, Frequencia freuencia) {
 		super();
 		setNome(nome);
@@ -113,6 +116,36 @@ public class Rotina {
 			}
 		
 		
+	}
+
+	
+
+	public boolean isIrrigado() {
+		return irrigado;
+	}
+
+
+
+	public void setIrrigado(boolean irrigado) {
+		this.irrigado = irrigado;
+	}
+
+
+
+	public boolean verificarIrrigacao() {
+		
+		try {
+			if (isAprovado() && isAtivado()) {
+				Thread.sleep(5000);
+				setIrrigado(true);	
+				plantacao.setUltimaIrrigcao(LocalDate.now());
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return isIrrigado();
 	}
 
 
