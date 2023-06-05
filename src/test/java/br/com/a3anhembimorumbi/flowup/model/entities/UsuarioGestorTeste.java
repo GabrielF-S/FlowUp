@@ -79,6 +79,7 @@ public class UsuarioGestorTeste {
 		Terreno terreno = usuario.CadastrarAreaTotal("Area1", "Nordeste", 200L);
 		Plantacao plantacao = usuario.CadastrarPlantacao("PLantacao1", 100L, "Pepino", 42, terreno);
 		Rotina rot = new Rotina("Rotina1", plantacao, Frequencia.DIARIO);
+		rot.setAprovado(true);
 		rot.setAtivado(true);
 		// acao
 		
