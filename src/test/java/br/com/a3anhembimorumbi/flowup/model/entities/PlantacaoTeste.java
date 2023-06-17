@@ -3,22 +3,27 @@ package br.com.a3anhembimorumbi.flowup.model.entities;
 import java.time.LocalDate;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import br.com.a3anhembimorumbi.flowup.model.Frequencia;
+import br.com.a3anhembimorumbi.flowup.model.service.EmailService;
 
 public class PlantacaoTeste {
-//	@InjectMocks @Spy
-//	private Plantacao plantacao;
-//	@Mock
-//	private EmailService emailService;
-//	@Before
-//	public void setup() {
-//		MockitoAnnotations.initMocks(this);
-//	}
-
+	@InjectMocks 
+	private Plantacao plantacao;
+	@Mock
+	private EmailService emailService;
+	@Before
+	public void setup() {
+		MockitoAnnotations.initMocks(this);
+	}
+	
 	@Test
-	public void verificarData() {
+	public void deveVerificarData() {
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
 		Plantacao plan = new Plantacao("teste", 25, "pepino", 178, terreno, 48L);
 
@@ -28,7 +33,7 @@ public class PlantacaoTeste {
 
 	}
 	@Test
-	public void naoNotificarFimDoCiclor() {
+	public void naoDeveNotificarGestor_QUandoNaoEsiverNoFimDoCiclor() {
 		
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
 		Plantacao plan = new Plantacao("teste", 25, "pepino", 178, terreno, 48L);
@@ -39,7 +44,7 @@ public class PlantacaoTeste {
 		
 	}
 	@Test
-	public void NotificarFimDoCiclor() {
+	public void NotificarGesto_QuandoChegarFimDoCiclor() {
 		
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
 		Plantacao plan = new Plantacao("teste", 25, "pepino", 178, terreno, 0);
@@ -50,7 +55,7 @@ public class PlantacaoTeste {
 		
 	}
 	@Test
-	public void deveAtivarIrrigacaoNaPlantacao() {
+	public void deveIrrigaraPlantacao_QuandoEstiverAprovadoEAtivado() {
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
 		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = new Rotina("Rotina1",plan , Frequencia.DIARIO);
@@ -66,7 +71,7 @@ public class PlantacaoTeste {
 		
 	}
 	@Test
-	public void naoDeveAtivarIrrigacaoNaPlantacao() {
+	public void naoDeveAtivarIrrigacaoNaPlantacao_QuandoJAEstiverAtivado() {
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
 		Plantacao plan = new Plantacao("PLantacao1", 100L, "Pepino", 42, terreno, 0);
 		Rotina rotina = new Rotina("Rotina1",plan , Frequencia.DIARIO);
@@ -97,19 +102,19 @@ public class PlantacaoTeste {
 		Assertions.assertThat(plan.getUltimaIrrigcao()).isEqualTo(LocalDate.now());
 		
 	}
-//	@Disabled
+//	
 //	@Test
 //	public void EnvioNotificacaorFimDoCiclor() {
 //		
 //		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
-//		Plantacao plan = new Plantacao("teste", 25, "pepino", 178, terreno, 0);
+//		plantacao = new Plantacao("teste", 25, "pepino", 178, terreno, 0);
 //		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
 //		
-//		Mockito.mock(EmailService.class);
-//		plan.enviarNotificacao(usuario ,plan);
+//		Mockito.when(emailService.notificarFinalDeCiclo(usuario, plantacao)).thenReturn(null);
+//		plantacao.enviarNotificacao(usuario ,plantacao);
 //		
-//		verify(emailService).notificarFinalDeCiclo(usuario, plan);;
+//		verify(emailService).notificarFinalDeCiclo(usuario, plantacao);;
 //	}
-	
+//	
 
 }

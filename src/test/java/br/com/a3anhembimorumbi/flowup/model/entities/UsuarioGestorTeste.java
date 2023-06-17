@@ -56,7 +56,7 @@ public class UsuarioGestorTeste {
 	   
 	}
 	@Test
-	public void naoDeveAprovarRotina() {
+	public void naoDeveAprovarRotina_QuandoRotinaJaAprovada() {
 		// cenario
 		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = usuario.CadastrarAreaTotal("Area1", "Nordeste", 200L);
@@ -73,7 +73,7 @@ public class UsuarioGestorTeste {
 	}
 	
 	@Test
-	public void deveDesativarRotina() {
+	public void deveDesativarRotina_QuandoRotinaEstaAprovadaAtivada() {
 		// cenario
 		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = usuario.CadastrarAreaTotal("Area1", "Nordeste", 200L);
@@ -90,7 +90,7 @@ public class UsuarioGestorTeste {
 		
 	}
 	@Test
-	public void naoDeveDesativarRotina() {
+	public void naoDeveDesativarRotina_QuandoNaoAProvada() {
 		// cenario
 		UsuarioGestor usuario = new UsuarioGestor("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = usuario.CadastrarAreaTotal("Area1", "Nordeste", 200L);

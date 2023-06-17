@@ -3,7 +3,6 @@ package br.com.a3anhembimorumbi.flowup.model.entities;
 import java.time.LocalDate;
 
 import br.com.a3anhembimorumbi.flowup.model.service.EmailService;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -212,12 +211,12 @@ public class Plantacao {
 
 
 
-//	public void enviarNotificacao(UsuarioGestor gestor, Plantacao plan) {
-//		if(notificarGestor()) {
-//			email.notificarFinalDeCiclo(gestor, plan);
-//		}
-//	}
-//	
+	public void enviarNotificacao(UsuarioGestor gestor, Plantacao plan) {
+		if(notificarGestor()) {
+			email.notificarFinalDeCiclo(gestor, plan);
+		}
+	}
+	
 	
 
 	

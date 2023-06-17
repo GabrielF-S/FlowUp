@@ -34,7 +34,7 @@ public class UsuarioComumTeste {
 	}
 
 	@Test
-	public void deveAtivarRotinadeIrrigacao() {
+	public void deveAtivarRotinadeIrrigacao_QuandoRotinaEstiverAprovada() {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
@@ -53,7 +53,7 @@ public class UsuarioComumTeste {
 	}
 
 	@Test
-	public void naoDeveAtivarRotinadeIrrigacao() {
+	public void naoDeveAtivarRotinadeIrrigacao_QuandoRotinaNaoAprovada() {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
@@ -71,7 +71,7 @@ public class UsuarioComumTeste {
 	}
 
 	@Test
-	public void deveEditarNomeRotinasdeIrrigacao() {
+	public void deveEditarNomeRotinasdeIrrigacao_QuandoRotinaNaoAprovada() {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
@@ -87,7 +87,7 @@ public class UsuarioComumTeste {
 
 	}
 	@Test
-	public void naoDeveEditarNomeRotinasdeIrrigacao() {
+	public void naoDeveEditarNomeRotinasdeIrrigacaoRotinaAprovada() {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
@@ -103,7 +103,7 @@ public class UsuarioComumTeste {
 		
 	}
 	@Test
-	public void deveEditarPlantacaoRotinasdeIrrigacao() {
+	public void deveEditarPlantacaoRotinasdeIrrigacao_QuandoRotinaNaoAprovada() {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
@@ -119,7 +119,7 @@ public class UsuarioComumTeste {
 		
 	}
 	@Test
-	public void naoDeveEditarPlantacaoRotinasdeIrrigacao() {
+	public void naoDeveEditarPlantacaoRotinasdeIrrigacao_QuandoRotinaAprovada() {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
@@ -136,7 +136,7 @@ public class UsuarioComumTeste {
 		
 	}
 	@Test
-	public void deveEditarFrequenciaRotinasdeIrrigacao() {
+	public void deveEditarFrequenciaRotinasdeIrrigacao_QuandoRotinaNaoAprovada() {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);
@@ -152,7 +152,7 @@ public class UsuarioComumTeste {
 		
 	}
 	@Test
-	public void naoDeveEditarFrequenciaRotinasdeIrrigacao() {
+	public void naoDeveEditarFrequenciaRotinasdeIrrigacao_QuandoRotinaAprovada() {
 		// cenario
 		UsuarioComum usuario = new UsuarioComum("Tomas", "Shelbi", "thosh", "tho12345");
 		Terreno terreno = new Terreno("Area1", "Nordeste", 200L);

@@ -20,7 +20,7 @@ public class TerrenoTeste {
 	}
 	
 	@Test
-	public void deveRetornarAreaTotalDisponivel() {
+	public void deveRetornarAreaTotalDisponivel_QuandoSolicitado() {
 		
 		//cenario
 		Terreno terreno = new Terreno("Area1","Nordeste",200L);
@@ -37,7 +37,7 @@ public class TerrenoTeste {
 		
 	}
 	@Test
-	public void deveRetornarAreaTotalDisponivelComMaisPlantacoes() {
+	public void deveRetornarAreaTotalDisponivel_QuandoTemPlantacoesAtreladas() {
 		
 		//cenario
 		Terreno terreno = new Terreno("Area1","Nordeste",200L);
@@ -55,7 +55,7 @@ public class TerrenoTeste {
 		
 	}
 	@Test
-	public void deveRetornarSemAreaDisponivel() {
+	public void deveRetornarArea_QuandoEstiverSemAreaDisponivel() {
 		
 		//cenario
 		Terreno terreno = new Terreno("Area1","Nordeste",200L);

@@ -20,7 +20,7 @@ public class UsuarioAdminTeste {
 	}
 	
 	@Test
-	public void deveVerificarSeNaoCriouUsuarioAdmin() {
+	public void deveVerificarSeNaoCriouUsuarioAdmin_QuandoUmUsuarioComum() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");
@@ -33,7 +33,7 @@ public class UsuarioAdminTeste {
 		
 	}
 	@Test
-	public void deveVerificarSeCriouUsuarioComumNaoGestor() {
+	public void deveVerificarSeCriouUsuarioComumNaoGestor_QuandoSolicitadoUmUsuarioComum() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");
@@ -61,7 +61,7 @@ public class UsuarioAdminTeste {
 	}
 	
 	@Test
-	public void deveVerificarSeCriouUsuarioGestorNaoComum() {
+	public void deveVerificarSeCriouUsuarioGestorNaoComum_QuandoSolicitadoUmUsuarioGestor() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");
@@ -75,7 +75,7 @@ public class UsuarioAdminTeste {
 	}
 	
 	@Test
-	public void deveVerificarSeCriouUsuarioGestorNaoAdmin() {
+	public void deveVerificarSeCriouUsuarioGestorNaoAdmin_QuandoSolicitadoUmUsuarioGestor() {
 		
 		//cenario
 		UsuarioAdmin admin = new UsuarioAdmin("Marcelo", "Soares", "marso", "mar123456");
